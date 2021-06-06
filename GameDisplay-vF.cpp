@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 #include <Windows.h>
 #include <WinUser.h>
 
@@ -9,13 +8,7 @@
 using namespace std;
 
 
-int x=5, y=6;
-bool isMoving = true;
-
-
-void Move() {
-	
-}
+int x=0, y=1;
 
 void board() {
 	
@@ -39,29 +32,48 @@ int main() {
 		
 		
 		if (GetKeyState(VK_DOWN) & 0x8000) {
-			y = y + 1;
-			system("cls");
-			board();
-			Sleep(150);
+			if (y == HEIGHT-2) {
+
+			}
+			else {
+				y = y + 1;
+				system("cls");
+				board();
+				Sleep(150);
+			}
 		}
 		if (GetKeyState(VK_UP) & 0x8000) {
-			y = y - 1;
-			system("cls");
-			board();
-			Sleep(150);
+			if (y == 1) {
+
+			}
+			else {
+				y = y - 1;
+				system("cls");
+				board();
+				Sleep(150);
+			}
 		}
 		if (GetKeyState(VK_LEFT) & 0x8000) {
-			x = x - 1;
-			system("cls");
-			board();
-			
-			Sleep(150);
+			if (x == 0) {
+
+			}
+			else {
+				x = x - 1;
+				system("cls");
+				board();
+				Sleep(150);
+			}
 		}
 		if (GetKeyState(VK_RIGHT) & 0x8000) {
-			x = x + 1;
-			system("cls");
-			board();
-			Sleep(150);
+			if (x == WIDTH - 1) {
+
+			}
+			else {
+				x = x + 1;
+				system("cls");
+				board();
+				Sleep(150);
+			}
 		}
 		
 	}
