@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>
+#include <cstdlib>
 #include <Windows.h>
 #include <WinUser.h>
 
@@ -31,33 +31,35 @@ void board() {
 
 }
 
-
 int main() {
 
-	board();
-	
-	
+    board();
 	
 	while (true) {
 		
 		
 		if (GetKeyState(VK_DOWN) & 0x8000) {
 			y = y + 1;
+			system("cls");
 			board();
 			Sleep(150);
 		}
 		if (GetKeyState(VK_UP) & 0x8000) {
 			y = y - 1;
+			system("cls");
 			board();
 			Sleep(150);
 		}
 		if (GetKeyState(VK_LEFT) & 0x8000) {
 			x = x - 1;
+			system("cls");
 			board();
+			
 			Sleep(150);
 		}
 		if (GetKeyState(VK_RIGHT) & 0x8000) {
 			x = x + 1;
+			system("cls");
 			board();
 			Sleep(150);
 		}
